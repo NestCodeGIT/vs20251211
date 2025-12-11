@@ -1,4 +1,4 @@
-````markdown
+
 # Einführung Programmierung
 
 ## Arrays
@@ -57,8 +57,3 @@ Schreiben Sie ein Programm, das ein **Integer-Array mit zufälligen Zahlen** zwi
 + 37, 2, 93, 45, 81, 89, 12, 19, 66, 20
 + Mittelwert ohne Min und Max: 46,125
 ```
-
-````
-
-> 🔹 Hinweis: In Markdown werden mit ```diff``` + (grün) und - (rot) hervorgehoben. So lassen sich Zahlen und Ergebnisse farblich unterscheiden.
-````
