@@ -1,0 +1,69 @@
+#####################################################################
+# C# und .NET Build- und temporäre Ordner
+#####################################################################
+
+# Ordner für die kompilierte Ausgabe (binaries)
+# Diese werden bei jedem Build neu erstellt und müssen nicht getrackt werden.
+[Bb]in/
+[Oo]bj/
+
+# Temporäre Dateien für Unit-Tests
+TestResults/
+build/
+Build/
+
+# Nuget-Pakete (werden über 'dotnet restore' oder 'nuget restore' wiederhergestellt)
+*.nupkg
+# Lokale Nuget-Cache-Ordner (optional, falls sie fälschlicherweise im Projekt liegen)
+.nuget/
+
+#--------------------------------------------------------------------
+# Visual Studio und IDE spezifische Dateien
+#--------------------------------------------------------------------
+
+# Solution User Options File (Speichert Ihre persönlichen VS-Einstellungen)
+*.suo
+
+# Visual Studio Code / VS Code-spezifische Einstellungen (falls verwendet)
+.vscode/
+
+# Visual Studio Cache für IntelliSense und Debug-Informationen
+*.user
+*.useros
+*.userprefs
+*.usersettings
+*.tss
+*.vspscc
+*.vssscc
+
+# Program Database Files (Debugging-Symbole)
+# Diese werden beim Kompilieren erstellt.
+*.pdb
+*.mdb
+
+# Hilfsdateien für IntelliSense und Dokumentation
+# Diese können den Commit unnötig groß machen.
+*.docstates
+*.intellisense.js
+*.vsidx
+*.vsl
+*.log
+*.filter
+
+# Die .vs-Ordner sind große, versteckte Ordner in der Solution-Ebene 
+# (nicht im Projektordner!) und enthalten Metadaten.
+.vs/
+
+#--------------------------------------------------------------------
+# Sonstiges
+#--------------------------------------------------------------------
+
+# Resharper (Eine beliebte Erweiterung für Visual Studio)
+_ReSharper.*/
+*.[Rr]e[Ss]harper
+
+# Dateien für Kryptografie
+*.snk
+
+# Temporäre Dateien für Source Control (z.B. Team Foundation Server)
+*.vsdps
