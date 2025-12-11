@@ -21,6 +21,13 @@ namespace FirstProject
             aufgabe_array forarray = new aufgabe_array(10);
             forarray.Anzeigen();
 
+
+
+
+
+
+
+
          
             // Aufgabe 2: Lottozahlen
           
