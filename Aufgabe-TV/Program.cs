@@ -1,4 +1,6 @@
-﻿namespace Aufgabe_TV
+﻿using Aufgabe_TV.Alternative;
+
+namespace Aufgabe_TV
 {
     internal class Program
     {
@@ -7,27 +9,39 @@
             Console.WriteLine("--- Test der Basis-Funktionalität ---");
 
             // Erzeugen eines TV-Objekts
-            TV meinFernseher = new TV();
+            //  TV meinFernseher = new TV();
 
-            // Testen aller Funktionalitäten
-            meinFernseher.GetInfo(); // Info im ausgeschalteten Zustand
-            Console.WriteLine($"Ist an? {meinFernseher.IsOn()}");
+            ClassTV1 sony = new ClassTV1();
 
-            meinFernseher.TurnOn(); // Einschalten
-            meinFernseher.GetInfo();
+            sony.TurnOn();
 
-            meinFernseher.RaiseVolume(); // Lautstärke erhöhen
-            meinFernseher.RaiseVolume();
 
-            meinFernseher.LowerVolume(); // Lautstärke reduzieren
-            meinFernseher.GetInfo();
 
-            meinFernseher.TurnOff(); // Ausschalten
-            meinFernseher.GetInfo();
 
-            meinFernseher.RaiseVolume(); // Versuch, Lautstärke im ausgeschalteten Zustand zu ändern
+            //meinFernseher.GetInfo();
 
-            // Hier würde die Main-Methode normalerweise mit den folgenden Erweiterungen fortfahren.
+            //Console.WriteLine($"Ist an? {meinFernseher.IsOn()}");
+
+            //meinFernseher.TurnOn();
+
+            //meinFernseher.GetInfo();
+
+            //meinFernseher.RaiseVolume();
+
+            //meinFernseher.RaiseVolume();
+
+            //meinFernseher.LowerVolume();
+
+            //meinFernseher.GetInfo();
+
+            //meinFernseher.TurnOff(); 
+
+            //meinFernseher.GetInfo();
+
+            //meinFernseher.RaiseVolume();
+
+
+
         }
     }
 }
