@@ -21,7 +21,7 @@
 
 
 
-            }while( erfolg );
+            }while( erfolg ==false );
 
 
 
