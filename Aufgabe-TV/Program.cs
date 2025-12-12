@@ -13,7 +13,12 @@ namespace Aufgabe_TV
 
             ClassTV1 sony = new ClassTV1();
 
+            Console.WriteLine(sony.IsOn());
             sony.TurnOn();
+            Console.WriteLine(sony.IsOn());
+
+            sony.TurnOff();
+            Console.WriteLine(sony.IsOn());
 
 
 
