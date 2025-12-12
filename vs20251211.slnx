@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="Binärzahlen-dozent/Binärzahlen-dozent.csproj" Id="2d26238f-28e3-4f06-88a5-7d30fe0e82eb" />
+  <Project Path="dozent-code/dozent-code.csproj" Id="0ab5d04b-dc33-481d-aa03-db7e7e022c4f" />
   <Project Path="FirstProject/FirstProject.csproj" />
+  <Project Path="lottozahlen-dozent/lottozahlen-dozent.csproj" Id="c3c40109-6578-487c-a784-ea4e2f858afd" />
 </Solution>

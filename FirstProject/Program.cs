@@ -9,9 +9,9 @@ namespace FirstProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=========================================================================");
+          
             Console.WriteLine("== Ausführung aller Programmier-Aufgaben ==");
-            Console.WriteLine("=========================================================================");
+        
 
       
             // Aufgabe 1: Statistik 
