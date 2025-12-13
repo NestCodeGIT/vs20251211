@@ -1,0 +1,6 @@
+@TVApi_HostAddress = http://localhost:5027
+
+GET {{TVApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

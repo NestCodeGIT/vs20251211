@@ -8,42 +8,17 @@ namespace Aufgabe_TV
         {
             Console.WriteLine("--- Test der Basis-Funktionalität ---");
 
-            // Erzeugen eines TV-Objekts
-            //  TV meinFernseher = new TV();
+            ClassTV1 tv = new ClassTV1();
 
-            ClassTV1 sony = new ClassTV1();
-
-            Console.WriteLine(sony.IsOn());
-            sony.TurnOn();
-            Console.WriteLine(sony.IsOn());
-
-            sony.TurnOff();
-            Console.WriteLine(sony.IsOn());
-
-
-
-
-            //meinFernseher.GetInfo();
-
-            //Console.WriteLine($"Ist an? {meinFernseher.IsOn()}");
-
-            //meinFernseher.TurnOn();
-
-            //meinFernseher.GetInfo();
-
-            //meinFernseher.RaiseVolume();
-
-            //meinFernseher.RaiseVolume();
-
-            //meinFernseher.LowerVolume();
-
-            //meinFernseher.GetInfo();
-
-            //meinFernseher.TurnOff(); 
-
-            //meinFernseher.GetInfo();
-
-            //meinFernseher.RaiseVolume();
+            tv.GetInfo();    // Fernseher aus
+            tv.TurnOn();     // Einschalten
+            tv.RaiseVolume();
+            tv.RaiseVolume();
+            tv.GetInfo();    // Lautstärke=2
+            tv.LowerVolume();
+            tv.GetInfo();    // Lautstärke=1
+            tv.TurnOff();
+            tv.GetInfo();    // Fernseher aus
 
 
 

@@ -6,4 +6,5 @@
   <Project Path="FirstProject/FirstProject.csproj" />
   <Project Path="lottozahlen-dozent/lottozahlen-dozent.csproj" Id="c3c40109-6578-487c-a784-ea4e2f858afd" />
   <Project Path="Mittelwert-dozent/Mittelwert-dozent.csproj" Id="2b93762c-3cff-44df-a1f5-41d7d0e5e3ee" />
+  <Project Path="TVApi/TVApi.csproj" Id="0478e814-db91-429a-9310-9ffab3681236" />
 </Solution>
