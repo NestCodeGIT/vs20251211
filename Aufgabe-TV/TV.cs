@@ -10,8 +10,10 @@ public class TV
     // Konstruktor, um Standardwerte zu setzen
     public TV()
     {
-        switchedOn = false; // Initial ist der Fernseher aus
-        volume = 50;        // Initial ist die Lautstärke auf 50 (wird später auf 0-100 beschränkt)
+        switchedOn = false; 
+        // Initial ist der Fernseher aus
+        volume = 50;       
+        // Initial ist die Lautstärke auf 50 (wird später auf 0-100 beschränkt)
         Console.WriteLine("Neuer Fernseher erstellt.");
     }
 

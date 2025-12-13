@@ -1,87 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Aufgabe_TV.Alternative
+namespace Aufgabe_TV.Professional;
+
+public class TV
 {
-    internal class ClassTV1
+    // ========= Fields =========
+    private bool _isSwitchedOn;
+    private int _volume = 20;
+    private int _volumeStep = 1;
+    private int _currentProgramIndex = 0;
+
+    // ========= Constants / Collections =========
+    public IReadOnlyList<string> Programs { get; } =
+        new List<string> { "ARD", "Sat1", "Pro7", "WDR", "ARTE" }.AsReadOnly();
+
+    // ========= Properties =========
+    public bool IsSwitchedOn
     {
-        // private bool SwitchedOn { get; set; }
-        //private volatile bool _switchedOn;
-
-
-
-        //public bool IsSwitchedOn { get; private set; }
-        //public void TurnOn() => IsSwitchedOn = true;
-        //public void TurnOff() => IsSwitchedOn = false;
-
-        //public bool IsOn() =>  IsSwitchedOn;
-
-        private bool switchedOn;
-        private int volume;
-        private int volumeStep = 1;
-        private string[] programs = { "ARD", "Sat1", "Pro7", "WDR", "ARTE" };
-        private int currentProgram = 0;
-
-        public void SetVolumeStep(int step)
-        {
-            if (step >= 1 && step <= 10)
-            {
-                volumeStep = step;
-            }
-        }
-        public void RaiseVolume()
-        {
-            if (volume + volumeStep <= 100)
-                volume += volumeStep;
-
-
-        }
-        public void LowerVolume()
-        {
-            if (volume - volumeStep >= 0)
-                volume -= volumeStep;
-
-
-        }
-        public void TurnOn()
-        {
-            switchedOn = true;
-            Console.WriteLine("Fernseher eingeschaltet");
-        }
-
-        public void TurnOff()
-        {
-            switchedOn = false;
-            Console.WriteLine("Fernseher ausgeschaltet");
-        }
-
-
-        public bool IsOn()
-        {
-            return switchedOn;
-        }
-
-        public void GetInfo()
-        {
-            if (switchedOn)
-                Console.WriteLine($"Fernseher an: Lautstärke = {volume}, Programm = {programs[currentProgram]}");
-            else
-                Console.WriteLine("Fernseher aus");
-        }
-
-
-
-        public void NextProgram()
-        {
-            currentProgram = (currentProgram + 1) % programs.Length;
-        }
-
-        public void PreviousProgram()
-        {
-            currentProgram = (currentProgram - 1 + programs.Length) % programs.Length;
-        }
-
-    
+        get => _isSwitchedOn;
+        private set => _isSwitchedOn = value;
     }
+
+    public int Volume
+    {
+        get => _volume;
+        private set => _volume = Math.Clamp(value, 0, 100);
+    }
+
+    public int VolumeStep
+    {
+        get => _volumeStep;
+        set => _volumeStep = Math.Clamp(value, 1, 10);
+    }
+
+    public string CurrentProgram => Programs[_currentProgramIndex];
+
+    // ========= Events =========
+    public event Action? SwitchedOn;
+    public event Action? SwitchedOff;
+
+    // ========= Methods =========
+    public void TurnOn()
+    {
+        if (IsSwitchedOn) return;
+
+        IsSwitchedOn = true;
+        SwitchedOn?.Invoke();
+    }
+
+    public void TurnOff()
+    {
+        if (!IsSwitchedOn) return;
+
+        IsSwitchedOn = false;
+        SwitchedOff?.Invoke();
+    }
+
+    public void RaiseVolume()
+    {
+        if (!IsSwitchedOn) return;
+        Volume += VolumeStep;
+    }
+
+    public void LowerVolume()
+    {
+        if (!IsSwitchedOn) return;
+        Volume -= VolumeStep;
+    }
+
+    public void NextProgram()
+    {
+        if (!IsSwitchedOn) return;
+
+        _currentProgramIndex =
+            (_currentProgramIndex + 1) % Programs.Count;
+    }
+
+    public void PreviousProgram()
+    {
+        if (!IsSwitchedOn) return;
+
+        _currentProgramIndex =
+            (_currentProgramIndex - 1 + Programs.Count) % Programs.Count;
+    }
+
+    // ========= Info / Output =========
+    public string GetInfo() =>
+        IsSwitchedOn
+            ? $"Fernseher an: Lautstärke = {Volume}, Programm = {CurrentProgram}"
+            : "Fernseher aus";
+
+    public override string ToString() => GetInfo();
 }
